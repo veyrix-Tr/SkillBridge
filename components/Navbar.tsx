@@ -10,6 +10,18 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
 
+  // Load profile state from localStorage on mount and save on changes
+  useEffect(() => {
+    const savedProfileState = localStorage.getItem('showProfile');
+    if (savedProfileState === 'true') {
+      setShowProfile(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('showProfile', showProfile.toString());
+  }, [showProfile]);
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
@@ -22,10 +34,13 @@ export default function Navbar() {
     // Set active section based on current path or scroll position
     if (pathname === '/about') {
       setActiveSection('about');
+    } else if (pathname.startsWith('/careers')) {
+      // Handle careers page with or without query parameters
+      setActiveSection('careers');
     } else if (pathname === '/') {
       // Handle scroll-based active section on home page
       const handleScroll = () => {
-        const sections = ['home', 'careers', 'how-it-works'];
+        const sections = ['home', 'careers', 'how-it-works', 'cta'];
         const scrollPosition = window.scrollY + 100;
 
         let currentSection = '';
@@ -40,8 +55,13 @@ export default function Navbar() {
           }
         }
         
-        // Set default to 'home' if no section is detected
-        setActiveSection(currentSection || 'home');
+        // Map CTA to how-it-works for navbar highlighting
+        if (currentSection === 'cta') {
+          setActiveSection('how-it-works');
+        } else {
+          // Set default to 'home' if no section is detected
+          setActiveSection(currentSection || 'home');
+        }
       };
 
       window.addEventListener('scroll', handleScroll);
@@ -65,7 +85,7 @@ export default function Navbar() {
     // If we're on the home page, scroll to the section
     const element = document.getElementById(targetId);
     if (element) {
-      const navbarHeight = 64; // h-16 = 64px
+      const navbarHeight = 80; // h-20 = 80px
       const elementPosition = element.offsetTop - navbarHeight;
       window.scrollTo({
         top: elementPosition,
@@ -78,13 +98,13 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
+            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
+              <span className="text-white font-bold text-2xl">S</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400 bg-clip-text text-transparent">
               SkillBridge
             </span>
           </div>

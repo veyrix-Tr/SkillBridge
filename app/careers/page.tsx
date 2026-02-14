@@ -138,7 +138,7 @@ export default function CareersPage() {
       <div className="min-h-screen bg-black">
         <Navbar />
 
-        <main className="pt-16">
+        <main className="pt-20">
           <section className="relative py-24 px-4 bg-black">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16 space-y-4">
@@ -219,7 +219,7 @@ export default function CareersPage() {
     <div className="min-h-screen bg-black">
       <Navbar />
 
-      <main className="pt-16">
+      <main className="pt-20">
         {/* Hero Section */}
         <section className="relative py-20 px-4 bg-gradient-to-b from-black via-gray-900/50 to-black">
           <div className="max-w-4xl mx-auto text-center">

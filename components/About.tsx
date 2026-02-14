@@ -13,7 +13,7 @@ export default function About() {
     <div className="min-h-screen bg-black">
       <Navbar />
       
-      <main className="pt-16">
+      <main className="pt-20">
         <Hero />
         <WhatWeDo />
         <HowItWorks />
