@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [showProfile, setShowProfile] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isDarkMode) {
@@ -15,8 +18,51 @@ export default function Navbar() {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    // Set active section based on current path or scroll position
+    if (pathname === '/about') {
+      setActiveSection('about');
+    } else if (pathname === '/') {
+      // Handle scroll-based active section on home page
+      const handleScroll = () => {
+        const sections = ['home', 'careers', 'how-it-works'];
+        const scrollPosition = window.scrollY + 100;
+
+        let currentSection = '';
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const { offsetTop, offsetHeight } = element;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              currentSection = section;
+              break;
+            }
+          }
+        }
+        
+        // Set default to 'home' if no section is detected
+        setActiveSection(currentSection || 'home');
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Check initial position
+
+      return () => window.removeEventListener('scroll', handleScroll);
+    } else {
+      setActiveSection('');
+    }
+  }, [pathname]);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
+    
+    // If we're not on the home page, navigate to home first
+    if (pathname !== '/') {
+      window.location.href = `/#${targetId}`;
+      return;
+    }
+
+    // If we're on the home page, scroll to the section
     const element = document.getElementById(targetId);
     if (element) {
       const navbarHeight = 64; // h-16 = 64px
@@ -47,28 +93,28 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <a 
               href="#home" 
-              className="nav-link"
+              className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
               onClick={(e) => handleNavClick(e, 'home')}
             >
               Home
             </a>
             <a 
               href="#careers" 
-              className="nav-link"
+              className={`nav-link ${activeSection === 'careers' ? 'active' : ''}`}
               onClick={(e) => handleNavClick(e, 'careers')}
             >
               Careers
             </a>
             <a 
-              href="#packages" 
-              className="nav-link"
-              onClick={(e) => handleNavClick(e, 'packages')}
+              href="#how-it-works" 
+              className={`nav-link ${activeSection === 'how-it-works' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'how-it-works')}
             >
-              Packages
+              How It Works
             </a>
             <a 
               href="/about" 
-              className="nav-link"
+              className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
             >
               About
             </a>
@@ -124,28 +170,28 @@ export default function Navbar() {
           <div className="px-4 py-4 space-y-3">
             <a 
               href="#home" 
-              className="nav-link block"
+              className={`nav-link block ${activeSection === 'home' ? 'active' : ''}`}
               onClick={(e) => handleNavClick(e, 'home')}
             >
               Home
             </a>
             <a 
               href="#careers" 
-              className="nav-link block"
+              className={`nav-link block ${activeSection === 'careers' ? 'active' : ''}`}
               onClick={(e) => handleNavClick(e, 'careers')}
             >
               Careers
             </a>
             <a 
-              href="#packages" 
-              className="nav-link block"
-              onClick={(e) => handleNavClick(e, 'packages')}
+              href="#how-it-works" 
+              className={`nav-link block ${activeSection === 'how-it-works' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'how-it-works')}
             >
-              Packages
+              How It Works
             </a>
             <a 
               href="/about" 
-              className="nav-link block"
+              className={`nav-link block ${activeSection === 'about' ? 'active' : ''}`}
             >
               About
             </a>

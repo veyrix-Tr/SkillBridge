@@ -1,11 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
-import { useWallet } from '@/context/WalletContext';
 
 export default function CTA() {
   const sectionRef = useRef<HTMLElement>(null);
-  const { isConnected, connectWallet } = useWallet();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,76 +23,119 @@ export default function CTA() {
     return () => observer.disconnect();
   }, []);
 
-  const handleBotAccess = async () => {
-    if (!isConnected) {
-      // Trigger wallet connection popup
-      await connectWallet();
-      return;
-    }
-    // If already connected, open Telegram bot
-    window.open('https://t.me/Treth11_bot', '_blank');
-  };
-
   return (
-    <section ref={sectionRef} className="relative py-24 px-4 bg-gradient-to-b from-black via-purple-900/20 to-black overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 px-4 bg-gradient-to-b from-black via-cyan-900/20 to-black overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
       
-      <div className="relative max-w-4xl mx-auto text-center">
+      <div className="relative max-w-6xl mx-auto">
         <div className="space-y-8 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-bold text-white">
-            Ready to Start Swapping?
-          </h2>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-            Join thousands of users using AI-powered Telegram bot for seamless cross-chain and on-chain swaps
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-6">
-            <button
-              onClick={handleBotAccess}
-              className="group relative px-8 py-4 font-bold text-lg text-white transition-all duration-300 ease-out hover:scale-105 cursor-pointer"
-            >
-              <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 rounded-full blur-md opacity-75 group-hover:opacity-100 transition-opacity"></span>
-              <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 rounded-full"></span>
-              <span className="relative flex items-center gap-2">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-.99.53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.48 1.02-.73 3.99-1.73 6.66-2.87 8-3.43 3.8-1.58 4.59-1.85 5.11-1.86.11 0 .37.03.54.17.14.11.18.26.2.37.01.06.03.24.01.38z"/>
-                </svg>
-                {isConnected ? 'Open Telegram Bot' : 'Connect Wallet to Access'}
-              </span>
-            </button>
-            
-            <a
-              href="#features"
-              className="px-8 py-4 font-bold text-lg text-white border-2 border-purple-500/40 rounded-full backdrop-blur-sm hover:bg-purple-500/20 hover:border-purple-400/60 transition-all duration-300"
-            >
-              View Documentation
-            </a>
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-6">
+              Why does it really matters ?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Most students choose careers without real exposure. SkillBridge allows them to experience industries before committing years of time and money.
+            </p>
           </div>
           
-          <div className="pt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto scroll-reveal" style={{ transitionDelay: '200ms' }}>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-2">
-                10k+
+          {/* Benefits Grid with Cross Structure */}
+          <div className="pt-12 relative max-w-5xl mx-auto scroll-reveal" style={{ transitionDelay: '200ms' }}>
+            {/* Central Star Symbol */}
+            <div className="absolute top-[54%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-20">
+              <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400 rounded-full flex items-center justify-center shadow-lg shadow-cyan-500/50">
+                <svg className="w-11 h-11 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
               </div>
-              <div className="text-gray-400">Active Users</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent mb-2">
-                $50M+
+            
+            {/* Connecting Lines */}
+            <div className="absolute top-[54%] left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent transform -translate-y-1/2 pointer-events-none z-10"></div>
+            <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent transform -translate-x-1/2 pointer-events-none z-10"></div>
+            
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Top Left Card */}
+              <div className="text-center p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-gray-800/60 hover:border-cyan-500/30 transition-all duration-300 relative overflow-hidden group">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Clarity Before Commitment</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Avoid wasting years in the wrong career path. Make decisions based on real-world experience, not assumptions or societal pressure. Test your aptitude and interest before investing in expensive education.
+                </p>
               </div>
-              <div className="text-gray-400">Volume Traded</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                99.9%
+              
+              {/* Top Right Card */}
+              <div className="text-center p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-gray-800/60 hover:border-teal-500/30 transition-all duration-300 relative overflow-hidden group">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-teal-500 to-green-600 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Real-World Exposure</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Observe actual workflows in clinics, law firms, architecture studios, engineering teams, and startups. Learn from professionals doing the work daily, not theoretical case studies or textbooks.
+                </p>
               </div>
-              <div className="text-gray-400">Uptime</div>
+              
+              {/* Bottom Left Card */}
+              <div className="text-center p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-gray-800/60 hover:border-blue-500/30 transition-all duration-300 relative overflow-hidden group">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Risk Reduction</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Reduce academic and financial misalignment. Prevent costly career pivots that waste time, money, and emotional energy. Make informed choices that align with your natural strengths and interests.
+                </p>
+              </div>
+              
+              {/* Bottom Right Card */}
+              <div className="text-center p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-gray-800/60 hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Confident Decision-Making</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Choose your path based on clarity and firsthand experience, not external pressure or outdated advice. Build the confidence that comes from knowing you've tested your future career before committing to it.
+                </p>
+              </div>
             </div>
+          </div>
+          
+          {/* Soft CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-12">
+            <a
+              href="#careers"
+              className="group relative px-8 py-4 font-bold text-lg text-white transition-all duration-300 ease-out hover:scale-105 cursor-pointer"
+            >
+              <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded-full blur-md opacity-75 group-hover:opacity-100 transition-opacity"></span>
+              <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 rounded-full"></span>
+              <span className="relative flex items-center gap-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Explore Career Programs
+              </span>
+            </a>
+            
+            <a
+              href="#pricing"
+              className="px-8 py-4 font-bold text-lg text-white border-2 border-cyan-500/40 rounded-full backdrop-blur-sm hover:bg-cyan-500/20 hover:border-cyan-400/60 transition-all duration-300"
+            >
+              Book a Trial Experience
+            </a>
           </div>
         </div>
       </div>

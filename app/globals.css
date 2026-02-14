@@ -297,8 +297,16 @@ body {
 }
 
 .nav-link:hover {
+  color: #a3a6a7;
+  border-color: #70617f;
+  background: rgba(168, 85, 247, 0.02);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.nav-link.active {
   color: white;
+  font-weight: 600;
   border-color: #a855f7;
-  background: rgba(168, 85, 247, 0.05);
+  background: rgba(168, 85, 247, 0.1);
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
 }

@@ -14,7 +14,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero-section">
+    <section id="home" className="hero-section">
       <div className="spline-background">
         <Spline scene="https://prod.spline.design/kMT5N1lSushR4Q9Z/scene.splinecode" />
       </div>

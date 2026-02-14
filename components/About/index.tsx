@@ -1,12 +1,12 @@
 "use client";
 
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Hero from './About/Hero';
-import WhatWeDo from './About/WhatWeDo';
-import HowItWorks from './About/HowItWorks';
-import WhyItMatters from './About/WhyItMatters';
-import CTASection from './About/CTASection';
+import Navbar from '../Navbar';
+import Footer from '../Footer';
+import Hero from './Hero';
+import WhatWeDo from './WhatWeDo';
+import HowItWorks from './HowItWorks';
+import WhyItMatters from './WhyItMatters';
+import CTASection from './CTASection';
 
 export default function About() {
   return (
