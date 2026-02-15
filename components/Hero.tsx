@@ -37,6 +37,14 @@ export default function Hero() {
             <div className="floating-orb orb-4"></div>
             <div className="floating-orb orb-5"></div>
             <div className="gradient-mesh"></div>
+            
+            {/* Purple Live Wave */}
+            <div className="wave-container">
+              <div className="wave wave-1"></div>
+              <div className="wave wave-2"></div>
+              <div className="wave wave-3"></div>
+            </div>
+            
             <div className="particle-field">
               {[...Array(20)].map((_, i) => (
                 <div key={i} className="particle" style={{ 

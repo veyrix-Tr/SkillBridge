@@ -26,7 +26,186 @@ const careerData = {
       "Informed decision about medical education"
     ]
   },
-  // ... other career entries ...
+  law: {
+    title: "Law & Legal Services",
+    tagline: "Uphold justice, advocate for rights, shape legal outcomes",
+    description: "Step into the dynamic world of legal practice where you'll observe courtroom proceedings, assist in legal research, and understand how attorneys navigate complex legal challenges to protect their clients' interests.",
+    duration: "3-6 weeks",
+    settings: ["Law Firms", "Corporate Legal", "Court Systems", "Public Defender Offices"],
+    skills: ["Legal Research", "Case Analysis", "Client Consultation", "Legal Writing"],
+    responsibilities: [
+      "Assist in case preparation and research",
+      "Observe courtroom proceedings and client meetings",
+      "Learn legal documentation and filing procedures",
+      "Understand ethical considerations in legal practice"
+    ],
+    outcomes: [
+      "Insight into various legal career paths",
+      "Practical experience with legal research tools",
+      "Understanding of courtroom dynamics",
+      "Network with legal professionals"
+    ]
+  },
+  engineering: {
+    title: "Engineering & Technology",
+    tagline: "Build solutions, drive innovation, shape the future",
+    description: "Immerse yourself in the world of engineering and technology where you'll work on real projects, collaborate with experienced engineers, and see how innovative solutions are designed, developed, and deployed.",
+    duration: "4-8 weeks",
+    settings: ["Tech Companies", "Manufacturing", "R&D Labs", "Startups"],
+    skills: ["Problem Solving", "Technical Design", "Project Management", "Programming"],
+    responsibilities: [
+      "Participate in design and development projects",
+      "Learn engineering methodologies and tools",
+      "Collaborate with cross-functional teams",
+      "Understand product development lifecycle"
+    ],
+    outcomes: [
+      "Hands-on engineering experience",
+      "Understanding of different engineering disciplines",
+      "Portfolio of project work",
+      "Industry connections and mentorship"
+    ]
+  },
+  architecture: {
+    title: "Architecture & Design",
+    tagline: "Create spaces, inspire experiences, build environments",
+    description: "Explore the creative world of architecture and design where you'll work on real projects, learn design principles, and understand how architects transform concepts into functional, beautiful spaces.",
+    duration: "3-6 weeks",
+    settings: ["Design Studios", "Construction", "Urban Planning", "Interior Design"],
+    skills: ["Creative Design", "Space Planning", "Project Visualization", "Technical Drawing"],
+    responsibilities: [
+      "Assist in design concept development",
+      "Learn architectural software and tools",
+      "Participate in client presentations",
+      "Understand building codes and regulations"
+    ],
+    outcomes: [
+      "Portfolio of design work",
+      "Understanding of architectural processes",
+      "Experience with industry-standard tools",
+      "Network with design professionals"
+    ]
+  },
+  business: {
+    title: "Business & Entrepreneurship",
+    tagline: "Lead ventures, drive growth, create value",
+    description: "Dive into the world of business and entrepreneurship where you'll work with startups and established companies, learn business strategies, and understand how successful ventures are built and scaled.",
+    duration: "2-4 weeks",
+    settings: ["Startups", "Corporate Offices", "Business Consulting", "Venture Capital"],
+    skills: ["Business Strategy", "Market Analysis", "Leadership", "Financial Planning"],
+    responsibilities: [
+      "Assist in business planning and strategy development",
+      "Learn market research and analysis techniques",
+      "Participate in team meetings and decision-making",
+      "Understand financial modeling and budgeting"
+    ],
+    outcomes: [
+      "Business acumen and strategic thinking",
+      "Understanding of startup ecosystems",
+      "Network with entrepreneurs and business leaders",
+      "Experience with business development tools"
+    ]
+  },
+  education: {
+    title: "Education & Teaching",
+    tagline: "Inspire minds, shape futures, transform lives",
+    description: "Experience the fulfilling world of education where you'll work with students, assist in lesson planning, and understand how educators create engaging learning environments that inspire and empower learners.",
+    duration: "2-3 weeks",
+    settings: ["Schools", "Colleges", "EdTech Companies", "Educational Institutions"],
+    skills: ["Teaching Methods", "Curriculum Design", "Student Engagement", "Educational Technology"],
+    responsibilities: [
+      "Assist in classroom activities and lesson delivery",
+      "Learn curriculum development and assessment",
+      "Participate in student mentoring and guidance",
+      "Understand educational technology integration"
+    ],
+    outcomes: [
+      "Teaching experience and classroom management skills",
+      "Understanding of educational methodologies",
+      "Experience with educational technology tools",
+      "Network with education professionals"
+    ]
+  },
+  data_science: {
+    title: "Data Science & Analytics",
+    tagline: "Uncover insights, drive decisions, predict futures",
+    description: "Enter the data-driven world of analytics where you'll work with real datasets, learn statistical methods, and understand how data scientists transform raw information into actionable business insights.",
+    duration: "3-5 weeks",
+    settings: ["Tech Companies", "Research Labs", "Financial Institutions", "Consulting Firms"],
+    skills: ["Statistical Analysis", "Machine Learning", "Data Visualization", "Programming"],
+    responsibilities: [
+      "Work with real datasets and analytical tools",
+      "Learn data cleaning and preprocessing techniques",
+      "Assist in building predictive models",
+      "Understand data-driven decision making"
+    ],
+    outcomes: [
+      "Hands-on data science experience",
+      "Portfolio of analytical projects",
+      "Understanding of industry tools and techniques",
+      "Network with data professionals"
+    ]
+  },
+  digital_marketing: {
+    title: "Digital Marketing & Media",
+    tagline: "Create campaigns, engage audiences, build brands",
+    description: "Explore the dynamic world of digital marketing where you'll work on real campaigns, learn marketing strategies, and understand how brands connect with audiences in the digital landscape.",
+    duration: "2-4 weeks",
+    settings: ["Marketing Agencies", "Media Companies", "Brand Teams", "Social Media Companies"],
+    skills: ["Content Creation", "Campaign Management", "Analytics", "Social Media Strategy"],
+    responsibilities: [
+      "Assist in campaign planning and execution",
+      "Learn content creation and copywriting",
+      "Participate in social media management",
+      "Understand marketing analytics and metrics"
+    ],
+    outcomes: [
+      "Digital marketing portfolio",
+      "Understanding of marketing strategies",
+      "Experience with marketing tools and platforms",
+      "Network with marketing professionals"
+    ]
+  },
+  finance: {
+    title: "Finance & Investment",
+    tagline: "Manage wealth, analyze markets, drive investments",
+    description: "Step into the fast-paced world of finance where you'll work with investment strategies, analyze market trends, and understand how financial professionals make critical decisions that drive economic growth.",
+    duration: "3-6 weeks",
+    settings: ["Investment Firms", "Banks", "Financial Planning", "Corporate Finance"],
+    skills: ["Financial Analysis", "Investment Strategy", "Risk Management", "Market Research"],
+    responsibilities: [
+      "Assist in financial analysis and reporting",
+      "Learn investment research and portfolio management",
+      "Participate in market trend analysis",
+      "Understand financial planning and advisory"
+    ],
+    outcomes: [
+      "Financial analysis experience",
+      "Understanding of investment strategies",
+      "Knowledge of financial markets",
+      "Network with finance professionals"
+    ]
+  },
+  environmental_science: {
+    title: "Environmental Science & Sustainability",
+    tagline: "Protect ecosystems, drive sustainability, create impact",
+    description: "Engage with the critical field of environmental science where you'll work on conservation projects, learn sustainability practices, and understand how scientists address global environmental challenges.",
+    duration: "3-5 weeks",
+    settings: ["Environmental NGOs", "Research Institutes", "Government Agencies", "Sustainability Consulting"],
+    skills: ["Environmental Research", "Conservation Methods", "Data Analysis", "Policy Understanding"],
+    responsibilities: [
+      "Participate in environmental research projects",
+      "Learn conservation and sustainability techniques",
+      "Assist in data collection and analysis",
+      "Understand environmental policy and regulations"
+    ],
+    outcomes: [
+      "Environmental research experience",
+      "Understanding of sustainability practices",
+      "Knowledge of conservation methods",
+      "Network with environmental professionals"
+    ]
+  }
 } as const;
 
 export default function CareersPage() {

@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [showProfile, setShowProfile] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
@@ -21,14 +20,6 @@ export default function Navbar() {
   useEffect(() => {
     localStorage.setItem('showProfile', showProfile.toString());
   }, [showProfile]);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
 
   useEffect(() => {
     // Set active section based on current path or scroll position
@@ -132,6 +123,7 @@ export default function Navbar() {
             >
               How It Works
             </a>
+            <div className="w-px h-6 bg-gray-600"></div>
             <a 
               href="/about" 
               className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
@@ -142,23 +134,6 @@ export default function Navbar() {
 
           {/* Right Side Actions */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Theme Toggle */}
-            <button
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              className="p-2 text-gray-300 hover:text-white transition-colors duration-300"
-              aria-label="Toggle theme"
-            >
-              {isDarkMode ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              )}
-            </button>
-            
             {/* Login Button */}
             <button
               onClick={() => setShowProfile(!showProfile)}
@@ -209,6 +184,7 @@ export default function Navbar() {
             >
               How It Works
             </a>
+            <div className="w-full h-px bg-gray-600 my-2"></div>
             <a 
               href="/about" 
               className={`nav-link block ${activeSection === 'about' ? 'active' : ''}`}
@@ -217,35 +193,16 @@ export default function Navbar() {
             </a>
             
             <div className="pt-3 border-t border-gray-800">
-              <div className="flex items-center justify-between">
-                {/* Mobile Login Button */}
-                <button
-                  onClick={() => {
-                    setShowProfile(!showProfile);
-                    setIsMenuOpen(false);
-                  }}
-                  className="px-6 py-2 font-semibold text-white border border-purple-500/40 rounded-full backdrop-blur-sm hover:bg-purple-500/20 hover:border-purple-400/60 transition-all duration-300"
-                >
-                  {showProfile ? 'Profile' : 'Login'}
-                </button>
-                
-                {/* Mobile Theme Toggle */}
-                <button
-                  onClick={() => setIsDarkMode(!isDarkMode)}
-                  className="p-2 text-gray-300 hover:text-white transition-colors duration-300"
-                  aria-label="Toggle theme"
-                >
-                  {isDarkMode ? (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  ) : (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                  )}
-                </button>
-              </div>
+              {/* Mobile Login Button */}
+              <button
+                onClick={() => {
+                  setShowProfile(!showProfile);
+                  setIsMenuOpen(false);
+                }}
+                className="w-full px-6 py-2 font-semibold text-white border border-purple-500/40 rounded-full backdrop-blur-sm hover:bg-purple-500/20 hover:border-purple-400/60 transition-all duration-300"
+              >
+                {showProfile ? 'Profile' : 'Login'}
+              </button>
             </div>
           </div>
         </div>
