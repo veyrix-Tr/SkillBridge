@@ -3,6 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import Careers from '@/components/Careers';
 
 const careerData = {
   medicine: {
@@ -137,63 +138,9 @@ export default function CareersPage() {
     return (
       <div className="min-h-screen bg-black">
         <Navbar />
-
         <main className="pt-20">
-          <section className="relative py-24 px-4 bg-black">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-16 space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400 bg-clip-text text-transparent">
-                  Explore Career Paths
-                </h2>
-                <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                  Discover your passion by experiencing real careers before making life-changing decisions
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Object.entries(careerData).map(([id, career], index) => (
-                  <a
-                    key={id}
-                    href={`/careers?careers=${id}`}
-                    className="block p-6 rounded-3xl border border-gray-800 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-gray-800/50"
-                  >
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4 text-white">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {career.title}
-                    </h3>
-
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                      {career.description}
-                    </p>
-
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2 text-xs text-gray-500">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>{career.duration}</span>
-                      </div>
-
-                      <div className="flex flex-wrap gap-1">
-                        {career.settings.slice(0, 2).map((setting, idx) => (
-                          <span key={idx} className="px-2 py-1 bg-gray-800 text-gray-400 text-xs rounded-full">
-                            {setting}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </section>
+          <Careers />
         </main>
-
         <Footer />
       </div>
     );
@@ -348,7 +295,7 @@ export default function CareersPage() {
 
             {/* CTA */}
             <div className="text-center mt-9 pt-7">
-              <button className="relative px-8 py-4 font-bold text-lg text-white transition-all duration-300 ease-out hover:scale-105 cursor-pointer group">
+              <a href="/coming-soon" className="relative inline-block px-8 py-4 font-bold text-lg text-white transition-all duration-300 ease-out hover:scale-105 group">
                 <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded-full blur-md opacity-75 group-hover:opacity-100 transition-opacity"></span>
                 <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 rounded-full"></span>
                 <span className="relative flex items-center gap-2">
@@ -357,7 +304,7 @@ export default function CareersPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-              </button>
+              </a>
             </div>
           </div>
         </section>
