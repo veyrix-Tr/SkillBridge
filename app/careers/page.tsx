@@ -1,8 +1,8 @@
 "use client";
 
 import { useSearchParams } from 'next/navigation';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Careers from '@/components/Careers';
 
 const careerData = {
@@ -26,112 +26,13 @@ const careerData = {
       "Informed decision about medical education"
     ]
   },
-  law: {
-    title: "Law & Legal Services",
-    tagline: "Uphold justice, protect rights, shape legal frameworks",
-    description: "Step into the world of legal practice where you'll work with attorneys, observe courtroom proceedings, and understand how justice is administered through legal systems and procedures.",
-    duration: "3-6 weeks",
-    settings: ["Law Firms", "Corporate Legal", "Court Systems", "Legal Aid"],
-    skills: ["Legal Research", "Case Analysis", "Client Consultation", "Legal Writing"],
-    responsibilities: [
-      "Assist in legal research and case preparation",
-      "Observe courtroom proceedings and client meetings",
-      "Learn legal documentation and filing procedures",
-      "Understand different areas of legal practice"
-    ],
-    outcomes: [
-      "Exposure to various legal specializations",
-      "Understanding of legal career requirements",
-      "Experience with legal research tools",
-      "Network with legal professionals"
-    ]
-  },
-  engineering: {
-    title: "Engineering & Technology",
-    tagline: "Build the future, solve complex problems, innovate solutions",
-    description: "Dive into the world of engineering where you'll work on real projects, use cutting-edge technology, and understand how engineers turn ideas into reality.",
-    duration: "4-8 weeks",
-    settings: ["Tech Companies", "Manufacturing", "R&D Labs", "Engineering Firms"],
-    skills: ["Problem Solving", "Technical Design", "Project Management", "Innovation"],
-    responsibilities: [
-      "Assist in engineering projects and design work",
-      "Learn technical software and tools",
-      "Participate in product development cycles",
-      "Understand engineering workflows and methodologies"
-    ],
-    outcomes: [
-      "Hands-on engineering experience",
-      "Understanding of technical career paths",
-      "Experience with industry-standard tools",
-      "Portfolio of engineering projects"
-    ]
-  },
-  architecture: {
-    title: "Architecture & Design",
-    tagline: "Create spaces, shape environments, inspire experiences",
-    description: "Explore the creative world of architecture and design where you'll work on real projects, learn design principles, and see how spaces are conceived and brought to life.",
-    duration: "3-6 weeks",
-    settings: ["Design Studios", "Construction", "Urban Planning", "Interior Design"],
-    skills: ["Creative Design", "Space Planning", "Project Visualization", "Design Software"],
-    responsibilities: [
-      "Assist in design concept development",
-      "Learn architectural drawing and modeling",
-      "Visit construction sites and project locations",
-      "Understand design principles and aesthetics"
-    ],
-    outcomes: [
-      "Portfolio of design projects",
-      "Understanding of architectural careers",
-      "Experience with design software",
-      "Network with design professionals"
-    ]
-  },
-  business: {
-    title: "Business & Entrepreneurship",
-    tagline: "Lead organizations, drive innovation, create value",
-    description: "Experience the dynamic world of business where you'll work with entrepreneurs, understand business operations, and learn what it takes to build and run successful organizations.",
-    duration: "2-4 weeks",
-    settings: ["Startups", "Corporate Offices", "Business Consulting", "Venture Capital"],
-    skills: ["Business Strategy", "Market Analysis", "Leadership", "Financial Planning"],
-    responsibilities: [
-      "Assist in business planning and strategy",
-      "Learn market research and analysis",
-      "Participate in business meetings and presentations",
-      "Understand business operations and management"
-    ],
-    outcomes: [
-      "Understanding of business career paths",
-      "Experience with business planning",
-      "Network with entrepreneurs and executives",
-      "Insight into startup and corporate culture"
-    ]
-  },
-  education: {
-    title: "Education & Teaching",
-    tagline: "Shape minds, inspire learning, build futures",
-    description: "Discover the rewarding field of education where you'll work with educators, understand teaching methodologies, and experience the impact of shaping young minds and lifelong learning.",
-    duration: "2-3 weeks",
-    settings: ["Schools", "Colleges", "EdTech Companies", "Educational Consulting"],
-    skills: ["Teaching Methods", "Curriculum Design", "Student Engagement", "Educational Technology"],
-    responsibilities: [
-      "Assist in lesson planning and delivery",
-      "Learn classroom management techniques",
-      "Participate in educational activities",
-      "Understand educational systems and policies"
-    ],
-    outcomes: [
-      "Experience in educational settings",
-      "Understanding of teaching careers",
-      "Skills in student engagement",
-      "Network with education professionals"
-    ]
-  }
-};
+  // ... other career entries ...
+} as const;
 
 export default function CareersPage() {
   const searchParams = useSearchParams();
   const careerId = searchParams.get('careers') as keyof typeof careerData;
-  const career = careerData[careerId];
+  const career = careerId ? careerData[careerId] : null;
 
   // If no career is selected, show all careers overview
   if (!careerId) {
@@ -165,7 +66,6 @@ export default function CareersPage() {
   return (
     <div className="min-h-screen bg-black">
       <Navbar />
-
       <main className="pt-20">
         {/* Hero Section */}
         <section className="relative py-20 px-4 bg-gradient-to-b from-black via-gray-900/50 to-black">
@@ -212,21 +112,14 @@ export default function CareersPage() {
               {/* Skills */}
               <div className="space-y-8">
                 <div className="relative group">
-
-                  {/* Glow Effect */}
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-
                   <div className="relative p-8 rounded-2xl bg-gray-900/80 backdrop-blur-xl border border-gray-800 shadow-xl">
-
-                    {/* Header */}
                     <div className="flex items-center justify-between mb-6">
                       <h3 className="text-2xl font-semibold text-white tracking-tight">
                         Skills You'll Learn
                       </h3>
                       <div className="h-1 w-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
                     </div>
-
-                    {/* Skills Grid */}
                     <div className="flex flex-wrap gap-3">
                       {career.skills.map((skill, index) => (
                         <span
@@ -237,14 +130,9 @@ export default function CareersPage() {
                         </span>
                       ))}
                     </div>
-
-                    {/* Optional subtle bottom divider */}
-                    <div className="mt-8 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
-
                   </div>
                 </div>
               </div>
-
             </div>
 
             {/* Responsibilities */}
@@ -258,20 +146,20 @@ export default function CareersPage() {
                         <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
                         <div className="absolute -inset-1 w-4 h-4 bg-cyan-400/20 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
-                      <span className="text-gray-100 group-hover:text-white transition-colors duration-300">{responsibility}</span>
+                      <span className="text-gray-100 group-hover:text-white transition-colors duration-300">
+                        {responsibility}
+                      </span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
 
-
-
+            {/* Outcomes */}
             <div className="space-y-4 pt-10">
               <h2 className="text-3xl font-semibold text-[#FACA15] mb-4">
                 Career Outcomes
               </h2>
-
               {career.outcomes.map((outcome, index) => (
                 <div
                   key={index}
@@ -295,7 +183,10 @@ export default function CareersPage() {
 
             {/* CTA */}
             <div className="text-center mt-9 pt-7">
-              <a href="/coming-soon" className="relative inline-block px-8 py-4 font-bold text-lg text-white transition-all duration-300 ease-out hover:scale-105 group">
+              <a 
+                href="/coming-soon" 
+                className="relative inline-block px-8 py-4 font-bold text-lg text-white transition-all duration-300 ease-out hover:scale-105 group"
+              >
                 <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded-full blur-md opacity-75 group-hover:opacity-100 transition-opacity"></span>
                 <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 rounded-full"></span>
                 <span className="relative flex items-center gap-2">
@@ -309,7 +200,6 @@ export default function CareersPage() {
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );

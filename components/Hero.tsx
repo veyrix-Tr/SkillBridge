@@ -1,8 +1,19 @@
 "use client";
 
-import Spline from '@splinetool/react-spline';
+import dynamic from 'next/dynamic';
+import { useState, useEffect } from 'react';
+
+const Spline = dynamic(() => import('@splinetool/react-spline').then(mod => mod.default), {
+  ssr: false,
+  loading: () => <div className="spline-background" />
+});
 
 export default function Hero() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   const handleExploreCareers = () => {
     const careersSection = document.getElementById('careers');
     careersSection?.scrollIntoView({ behavior: 'smooth' });
@@ -16,7 +27,7 @@ export default function Hero() {
   return (
     <section id="home" className="hero-section">
       <div className="spline-background">
-        <Spline scene="https://prod.spline.design/kMT5N1lSushR4Q9Z/scene.splinecode" />
+        {isClient && <Spline scene="https://prod.spline.design/kMT5N1lSushR4Q9Z/scene.splinecode" />}
       </div>
       
       <div className="overlay"></div>
