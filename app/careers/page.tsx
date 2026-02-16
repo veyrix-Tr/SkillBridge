@@ -10,13 +10,13 @@ const careerData = {
     title: "Medicine & Healthcare",
     tagline: "Save lives, heal communities, advance medical science",
     description: "Experience the rewarding world of healthcare where you'll work alongside medical professionals, witness life-saving procedures, and understand the daily challenges and triumphs of those dedicated to patient care.",
-    duration: "2-4 weeks",
-    settings: ["Hospitals", "Clinics", "Research Labs", "Emergency Centers"],
-    skills: ["Patient Care", "Medical Diagnosis", "Healthcare Ethics", "Emergency Response"],
+    duration: "3-6 weeks",
+    settings: ["Hospitals", "Clinics", "Research Labs"],
+    skills: ["Medical Diagnosis", "Healthcare Ethics"],
     responsibilities: [
       "Assist in patient care and monitoring",
       "Learn medical terminology and procedures",
-      "Observe surgeries and medical treatments",
+      "Observe medical treatments",
       "Understand healthcare systems and workflows"
     ],
     outcomes: [
@@ -24,18 +24,22 @@ const careerData = {
       "Hands-on experience with healthcare procedures",
       "Network with medical professionals",
       "Informed decision about medical education"
+    ],
+    lifeExperience: [
+      "Work 12-hour hospital shifts and handle emergencies",
+      "See how doctors connect with patients and families",
+      "Manage stress in life-or-death medical situations"
     ]
   },
   law: {
     title: "Law & Legal Services",
     tagline: "Uphold justice, advocate for rights, shape legal outcomes",
-    description: "Step into the dynamic world of legal practice where you'll observe courtroom proceedings, assist in legal research, and understand how attorneys navigate complex legal challenges to protect their clients' interests.",
+    description: "Step into the dynamic world of legal practice where you'll work on real cases, assist in legal research, and understand how attorneys navigate complex legal challenges to protect their clients' interests.",
     duration: "3-6 weeks",
-    settings: ["Law Firms", "Corporate Legal", "Court Systems", "Public Defender Offices"],
+    settings: ["Law Firms", "Public Defender Offices"],
     skills: ["Legal Research", "Case Analysis", "Client Consultation", "Legal Writing"],
     responsibilities: [
       "Assist in case preparation and research",
-      "Observe courtroom proceedings and client meetings",
       "Learn legal documentation and filing procedures",
       "Understand ethical considerations in legal practice"
     ],
@@ -44,6 +48,11 @@ const careerData = {
       "Practical experience with legal research tools",
       "Understanding of courtroom dynamics",
       "Network with legal professionals"
+    ],
+    lifeExperience: [
+      "Face billable hours pressure and tight deadlines",
+      "Build trust with clients during legal battles",
+      "Balance work and life in high-stakes law"
     ]
   },
   engineering: {
@@ -51,7 +60,7 @@ const careerData = {
     tagline: "Build solutions, drive innovation, shape the future",
     description: "Immerse yourself in the world of engineering and technology where you'll work on real projects, collaborate with experienced engineers, and see how innovative solutions are designed, developed, and deployed.",
     duration: "4-8 weeks",
-    settings: ["Tech Companies", "Manufacturing", "R&D Labs", "Startups"],
+    settings: ["Tech Firms", "Manufacturing", "R&D Labs", "Startups"],
     skills: ["Problem Solving", "Technical Design", "Project Management", "Programming"],
     responsibilities: [
       "Participate in design and development projects",
@@ -64,6 +73,11 @@ const careerData = {
       "Understanding of different engineering disciplines",
       "Portfolio of project work",
       "Industry connections and mentorship"
+    ],
+    lifeExperience: [
+      "Hit sprint deadlines and launch products",
+      "Work with tech teams and business partners",
+      "Keep learning while balancing tech life"
     ]
   },
   architecture: {
@@ -71,7 +85,7 @@ const careerData = {
     tagline: "Create spaces, inspire experiences, build environments",
     description: "Explore the creative world of architecture and design where you'll work on real projects, learn design principles, and understand how architects transform concepts into functional, beautiful spaces.",
     duration: "3-6 weeks",
-    settings: ["Design Studios", "Construction", "Urban Planning", "Interior Design"],
+    settings: ["Design Studios", "Construction", "Interior Design", "Small Architecture Firms"],
     skills: ["Creative Design", "Space Planning", "Project Visualization", "Technical Drawing"],
     responsibilities: [
       "Assist in design concept development",
@@ -84,14 +98,19 @@ const careerData = {
       "Understanding of architectural processes",
       "Experience with industry-standard tools",
       "Network with design professionals"
+    ],
+    lifeExperience: [
+      "Meet creative deadlines and present to clients",
+      "Negotiate design visions with real clients",
+      "Balance art and practical needs in projects"
     ]
   },
   business: {
     title: "Business & Entrepreneurship",
     tagline: "Lead ventures, drive growth, create value",
-    description: "Dive into the world of business and entrepreneurship where you'll work with startups and established companies, learn business strategies, and understand how successful ventures are built and scaled.",
-    duration: "2-4 weeks",
-    settings: ["Startups", "Corporate Offices", "Business Consulting", "Venture Capital"],
+    description: "Dive into the world of business and entrepreneurship where you'll work with startups and established firms, learn business strategies, and understand how successful ventures are built and scaled.",
+    duration: "4-6 weeks",
+    settings: ["Startups", "Business Consulting"],
     skills: ["Business Strategy", "Market Analysis", "Leadership", "Financial Planning"],
     responsibilities: [
       "Assist in business planning and strategy development",
@@ -104,26 +123,36 @@ const careerData = {
       "Understanding of startup ecosystems",
       "Network with entrepreneurs and business leaders",
       "Experience with business development tools"
+    ],
+    lifeExperience: [
+      "Make high-stakes decisions with real money",
+      "Build business networks and key relationships",
+      "Lead teams while balancing work and life"
     ]
   },
-  education: {
-    title: "Education & Teaching",
-    tagline: "Inspire minds, shape futures, transform lives",
-    description: "Experience the fulfilling world of education where you'll work with students, assist in lesson planning, and understand how educators create engaging learning environments that inspire and empower learners.",
-    duration: "2-3 weeks",
-    settings: ["Schools", "Colleges", "EdTech Companies", "Educational Institutions"],
-    skills: ["Teaching Methods", "Curriculum Design", "Student Engagement", "Educational Technology"],
+  journalism: {
+    title: "Journalism & Media",
+    tagline: "Tell stories, share truth, shape conversations",
+    description: "Experience the fast-paced world of journalism where you'll work with media teams, create compelling stories, and understand how news and content shape public opinion.",
+    duration: "3-6 weeks",
+    settings: ["Media Startups", "News Agencies", "Content Studios"],
+    skills: ["News Writing", "Interview Skills", "Content Creation", "Media Ethics"],
     responsibilities: [
-      "Assist in classroom activities and lesson delivery",
-      "Learn curriculum development and assessment",
-      "Participate in student mentoring and guidance",
-      "Understand educational technology integration"
+      "Write and edit news stories and articles",
+      "Conduct interviews with real people",
+      "Create content for social media and web",
+      "Learn media ethics and fact-checking"
     ],
     outcomes: [
-      "Teaching experience and classroom management skills",
-      "Understanding of educational methodologies",
-      "Experience with educational technology tools",
-      "Network with education professionals"
+      "Real journalism experience and portfolio",
+      "Understanding of media workflows",
+      "Content creation skills",
+      "Network with media professionals"
+    ],
+    lifeExperience: [
+      "Feel the pressure of breaking news deadlines",
+      "Build trust with sources and interview subjects",
+      "Balance media work with personal time"
     ]
   },
   data_science: {
@@ -131,7 +160,7 @@ const careerData = {
     tagline: "Uncover insights, drive decisions, predict futures",
     description: "Enter the data-driven world of analytics where you'll work with real datasets, learn statistical methods, and understand how data scientists transform raw information into actionable business insights.",
     duration: "3-5 weeks",
-    settings: ["Tech Companies", "Research Labs", "Financial Institutions", "Consulting Firms"],
+    settings: ["Tech Firms", "Financial Institutions", "Consulting Firms"],
     skills: ["Statistical Analysis", "Machine Learning", "Data Visualization", "Programming"],
     responsibilities: [
       "Work with real datasets and analytical tools",
@@ -144,14 +173,19 @@ const careerData = {
       "Portfolio of analytical projects",
       "Understanding of industry tools and techniques",
       "Network with data professionals"
+    ],
+    lifeExperience: [
+      "Face data-driven deadlines and analytical pressure",
+      "Bridge the gap between tech and business teams",
+      "Handle ethical choices in data science work"
     ]
   },
   digital_marketing: {
     title: "Digital Marketing & Media",
     tagline: "Create campaigns, engage audiences, build brands",
     description: "Explore the dynamic world of digital marketing where you'll work on real campaigns, learn marketing strategies, and understand how brands connect with audiences in the digital landscape.",
-    duration: "2-4 weeks",
-    settings: ["Marketing Agencies", "Media Companies", "Brand Teams", "Social Media Companies"],
+    duration: "3-6 weeks",
+    settings: ["Marketing Agencies", "Media firms", "Brand Teams", "Social Media firms"],
     skills: ["Content Creation", "Campaign Management", "Analytics", "Social Media Strategy"],
     responsibilities: [
       "Assist in campaign planning and execution",
@@ -164,6 +198,11 @@ const careerData = {
       "Understanding of marketing strategies",
       "Experience with marketing tools and platforms",
       "Network with marketing professionals"
+    ],
+    lifeExperience: [
+      "Launch campaigns under real-time pressure",
+      "See how social media shapes brand reputation",
+      "Balance always-on marketing with personal life"
     ]
   },
   finance: {
@@ -184,6 +223,11 @@ const careerData = {
       "Understanding of investment strategies",
       "Knowledge of financial markets",
       "Network with finance professionals"
+    ],
+    lifeExperience: [
+      "Handle market volatility and trading pressure",
+      "Build client trust around financial decisions",
+      "Balance market hours with personal life"
     ]
   },
   environmental_science: {
@@ -204,14 +248,19 @@ const careerData = {
       "Understanding of sustainability practices",
       "Knowledge of conservation methods",
       "Network with environmental professionals"
+    ],
+    lifeExperience: [
+      "Work outdoors in challenging field conditions",
+      "Connect with communities on environmental issues",
+      "Balance field research with office work"
     ]
   }
 } as const;
 
 export default function CareersPage() {
   const searchParams = useSearchParams();
-  const careerId = searchParams.get('careers') as keyof typeof careerData;
-  const career = careerId ? careerData[careerId] : null;
+  const careerId = searchParams.get('careers');
+  const career = careerId ? careerData[careerId as keyof typeof careerData] : null;
 
   // If no career is selected, show all careers overview
   if (!careerId) {
@@ -327,6 +376,26 @@ export default function CareersPage() {
                       </div>
                       <span className="text-gray-100 group-hover:text-white transition-colors duration-300">
                         {responsibility}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Life Experience */}
+            <div className="mb-12">
+              <div className="p-6 rounded-2xl bg-gray-900/80 border border-gray-800">
+                <h3 className="text-xl font-bold text-white mb-4">Life Experience</h3>
+                <ul className="space-y-3">
+                  {career.lifeExperience.map((experience, index) => (
+                    <li key={index} className="flex items-start gap-3 group">
+                      <div className="relative mt-2 flex-shrink-0">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <div className="absolute -inset-1 w-4 h-4 bg-purple-400/20 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      <span className="text-gray-100 group-hover:text-white transition-colors duration-300">
+                        {experience}
                       </span>
                     </li>
                   ))}

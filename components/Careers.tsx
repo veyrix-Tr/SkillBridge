@@ -38,7 +38,7 @@ export default function Careers() {
       hoverBgColor: "rgba(239, 68, 68, 0.2)",
       title: "Medicine & Healthcare",
       description: "Experience the daily life of doctors, nurses, and healthcare professionals in hospitals and clinics.",
-      duration: "2-4 weeks",
+      duration: "3-6 weeks",
       settings: ["Hospitals", "Clinics", "Research Labs"],
       skills: ["Patient Care", "Medical Diagnosis", "Healthcare Ethics"]
     },
@@ -54,7 +54,7 @@ export default function Careers() {
       title: "Law & Legal Services",
       description: "Work alongside lawyers and legal professionals in law firms and courtrooms.",
       duration: "3-6 weeks",
-      settings: ["Law Firms", "Corporate Legal", "Court Systems"],
+      settings: ["Law Firms", "Legal Aid Clinics"],
       skills: ["Legal Research", "Case Analysis", "Client Consultation"]
     },
     {
@@ -67,9 +67,9 @@ export default function Careers() {
       iconBg: "from-green-500 to-teal-600",
       hoverBgColor: "rgba(16, 185, 129, 0.2)",
       title: "Engineering & Technology",
-      description: "Build and innovate with engineers in tech companies and manufacturing plants.",
+      description: "Build and innovate with engineers in tech firms and manufacturing plants.",
       duration: "4-8 weeks",
-      settings: ["Tech Companies", "Manufacturing", "R&D Labs"],
+      settings: ["Tech firms", "Manufacturing", "R&D Labs"],
       skills: ["Problem Solving", "Technical Design", "Project Management"]
     },
     {
@@ -84,7 +84,7 @@ export default function Careers() {
       title: "Architecture & Design",
       description: "Create spaces and experiences with architects and designers in studios and construction sites.",
       duration: "3-6 weeks",
-      settings: ["Design Studios", "Construction", "Urban Planning"],
+      settings: ["Design Studios", "Construction", "Interior Design"],
       skills: ["Creative Design", "Space Planning", "Project Visualization"]
     },
     {
@@ -98,25 +98,24 @@ export default function Careers() {
       hoverBgColor: "rgba(249, 115, 22, 0.2)",
       title: "Business & Entrepreneurship",
       description: "Learn business operations and startup culture with entrepreneurs and business leaders.",
-      duration: "2-4 weeks",
-      settings: ["Startups", "Corporate Offices", "Business Consulting"],
+      duration: "4-6 weeks",
+      settings: ["Startups", "Business Consulting"],
       skills: ["Business Strategy", "Market Analysis", "Leadership"]
     },
     {
-      id: 'education',
+      id: 'journalism',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
         </svg>
       ),
-      iconBg: "from-cyan-500 to-blue-600",
-      hoverBgColor: "rgba(14, 165, 233, 0.2)",
-      title: "Education & Teaching",
-      description: "Experience teaching and educational administration in schools and educational institutions.",
-      duration: "2-3 weeks",
-      settings: ["Schools", "Colleges", "EdTech Companies"],
-      skills: ["Teaching Methods", "Curriculum Design", "Student Engagement"]
+      iconBg: "from-indigo-500 to-purple-600",
+      hoverBgColor: "rgba(99, 102, 241, 0.2)",
+      title: "Journalism & Media",
+      description: "Tell stories and create content with media professionals in newsrooms and content studios.",
+      duration: "3-6 weeks",
+      settings: ["Media Startups", "News Agencies", "Content Studios"],
+      skills: ["News Writing", "Interview Skills", "Content Creation"]
     }
   ];
 

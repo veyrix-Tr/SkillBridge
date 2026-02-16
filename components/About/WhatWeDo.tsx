@@ -10,7 +10,7 @@ export default function WhatWeDo() {
     {
       title: "Career Exploration",
       tagline: "Real-world exposure, real career clarity",
-      content: "SkillBridge connects students with real workplaces for hands-on career trials. We partner with schools, companies, and professionals to create meaningful experiences that help students discover their passions and make informed career choices.",
+      content: "SkillBridge connects students with real workplaces for hands-on career trials. We partner with firms and professionals to create meaningful experiences that help students discover their passions and make informed career choices.",
       details: "Students can explore diverse fields including medicine, law, engineering, architecture, design, and entrepreneurship. Each trial provides authentic exposure to daily work routines, challenges, and opportunities in different professions."
     },
     {
@@ -23,7 +23,7 @@ export default function WhatWeDo() {
       title: "Our Impact",
       tagline: "Transforming career education", 
       content: "We're transforming how students discover their future by providing structured, meaningful exposure to various professions before they make life-altering educational decisions.",
-      details: "Our platform bridges the gap between classroom learning and real-world application, ensuring students can make informed choices about their career paths based on actual experience rather than theoretical knowledge."
+      details: "Our platform bridges the gap between classroom learning and real-world exposure, ensuring students can make informed choices about their career paths based on actual experience rather than theoretical knowledge."
     }
   ];
 

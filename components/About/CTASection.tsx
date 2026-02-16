@@ -42,7 +42,7 @@ export default function CTASection() {
           Join the Career Discovery Movement
         </h2>
         <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
-          Whether you're a student looking for direction, a school wanting to offer better opportunities, or a company interested in building future talent, SkillBridge is your platform for meaningful career connections.
+          Whether you're a student seeking clarity and direction, a school striving to provide better opportunities, or firms driven by a social cause to guide students to take right career paths, SkillBridge is the platform for your meaningful career connections.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <button 

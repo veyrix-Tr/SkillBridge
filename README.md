@@ -62,10 +62,10 @@ SkillBridge enables students to explore careers like medicine, law, engineering,
 The platform includes 6 detailed career paths:
 - **Medicine & Healthcare**: Hospitals, clinics, research labs
 - **Law & Legal Services**: Law firms, court systems, corporate legal
-- **Engineering & Technology**: Tech companies, manufacturing, R&D
+- **Engineering & Technology**: Tech firms, manufacturing, R&D
 - **Architecture & Design**: Design studios, construction, urban planning
 - **Business & Entrepreneurship**: Startups, corporate offices, consulting
-- **Education & Teaching**: Schools, colleges, EdTech companies
+- **Education & Teaching**: Schools, colleges, EdTech firms
 
 ## Project Structure
 

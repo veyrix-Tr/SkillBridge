@@ -4,8 +4,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Hero from './Hero';
 import WhatWeDo from './WhatWeDo';
-import HowItWorks from './HowItWorks';
-import WhyItMatters from './WhyItMatters';
+import OurMission from './WhyItMatters';
 import CTASection from './CTASection';
 
 export default function About() {
@@ -16,8 +15,7 @@ export default function About() {
       <main className="pt-16">
         <Hero />
         <WhatWeDo />
-        <HowItWorks />
-        <WhyItMatters />
+        <OurMission />
         <CTASection />
       </main>
 

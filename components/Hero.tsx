@@ -30,30 +30,18 @@ export default function Hero() {
         {SplineComponent ? (
           <SplineComponent scene="https://prod.spline.design/kMT5N1lSushR4Q9Z/scene.splinecode" />
         ) : (
-          <div className="animated-background">
-            <div className="floating-orb orb-1"></div>
-            <div className="floating-orb orb-2"></div>
-            <div className="floating-orb orb-3"></div>
-            <div className="floating-orb orb-4"></div>
-            <div className="floating-orb orb-5"></div>
-            <div className="gradient-mesh"></div>
-            
-            {/* Purple Live Wave */}
-            <div className="wave-container">
-              <div className="wave wave-1"></div>
-              <div className="wave wave-2"></div>
-              <div className="wave wave-3"></div>
-            </div>
-            
-            <div className="particle-field">
-              {[...Array(20)].map((_, i) => (
-                <div key={i} className="particle" style={{ 
-                  left: `${Math.random() * 100}%`, 
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${3 + Math.random() * 4}s`
-                }}></div>
-              ))}
-            </div>
+          <div className="fallback-background">
+            <img 
+              src="/bg.png" 
+              alt="SkillBridge Background"
+              className="w-full h-full object-cover"
+              onLoad={() => console.log('Image loaded successfully')}
+              onError={(e) => {
+                console.error('Image failed to load:', e);
+                console.log('Current src:', e.currentTarget.src);
+              }}
+            />
+            <div className="bg-overlay"></div>
           </div>
         )}
       </div>
@@ -71,7 +59,7 @@ export default function Hero() {
           </p>
 
           <p className="text-sm text-gray-500 mt-2">
-            Designed for Class 9–12 and First-Year College Students.
+            Designed for Class 9–12 Students.
           </p>
 
           <div className="button-group">

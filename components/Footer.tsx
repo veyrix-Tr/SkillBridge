@@ -66,7 +66,6 @@ export default function Footer() {
             </ul>
           </div>
           
-          {/* Company */}
           <div>
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2">

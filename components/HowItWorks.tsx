@@ -55,7 +55,7 @@ export default function HowItWorks() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 space-y-4 scroll-reveal">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400 bg-clip-text text-transparent">
-            How It Works
+            How It Works ?
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Explore careers through structured real-world exposure in simple steps.
