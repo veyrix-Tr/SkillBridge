@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { skillBotPrompt } from '@/lib/prompt';
 
 export async function POST(req: Request) {
   try {
@@ -18,31 +19,38 @@ export async function POST(req: Request) {
       );
     }
 
-    // ✅ Use only the latest message
-    const latestMessage = messages[messages.length - 1];
-
-    // ✅ System instruction (CRITICAL FIX)
-    const systemPrompt = `
-You are SkillBot, an AI mentor.
-
-Rules:
-- Give clear, very short, helpful, and complete answers
-- Avoid one-word replies
-- Be very concise but informative and if possible use as less words as possible
-- Help with learning, coding, and problem solving
-`;
-
-    // ✅ Build Gemini-compatible format
-    const contents = [
+    // Build conversation history for Gemini
+    // First message is system prompt as user, then alternate user/model
+    const contents: { role: string; parts: { text: string }[] }[] = [
       {
         role: 'user',
-        parts: [{ text: systemPrompt }],
+        parts: [{ text: skillBotPrompt }],
       },
       {
-        role: 'user',
-        parts: [{ text: latestMessage.text }],
+        role: 'model',
+        parts: [{ text: "Got it! I'm SkillBot, ready to help students explore careers and answer their questions." }],
       },
     ];
+
+    // Add conversation history (skip the first AI greeting message)
+    const conversationMessages = messages.slice(0, -1); // all except latest
+    const latestMessage = messages[messages.length - 1];
+
+    for (const msg of conversationMessages) {
+      // Skip the default greeting
+      if (msg.text === "Hello! I'm your AI assistant. How can I help you today?") continue;
+
+      contents.push({
+        role: msg.sender === 'user' ? 'user' : 'model',
+        parts: [{ text: msg.text }],
+      });
+    }
+
+    // Add the latest user message
+    contents.push({
+      role: 'user',
+      parts: [{ text: latestMessage.text }],
+    });
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${process.env.GEMINI_API_KEY}`,
@@ -59,13 +67,12 @@ Rules:
       const errorData = await response.json().catch(() => ({}));
       console.error('Gemini API error:', errorData);
 
-      // ✅ Handle rate limit specifically
       if (response.status === 429) {
         const retryAfter = errorData?.error?.message?.match(/retry in (\d+\.\d+)s/)?.[1] || '60';
         return NextResponse.json({
           error: 'RATE_LIMIT',
-          message: `Out of credits. Please retry after ${retryAfter} seconds.`,
-          retryAfter: parseFloat(retryAfter)
+          message: `Too many requests. Please retry after ${Math.ceil(parseFloat(retryAfter))} seconds.`,
+          retryAfter: parseFloat(retryAfter),
         }, { status: 429 });
       }
 
@@ -76,21 +83,16 @@ Rules:
     }
 
     const data = await response.json();
-    console.log("Gemini Data:", JSON.stringify(data, null, 2));
-    console.log("-------------------");
 
     const reply =
       data?.candidates?.[0]?.content?.parts
-        ?.map((p: any) => p.text)
+        ?.map((p: { text?: string }) => p.text)
         .join('') || 'Sorry, I could not generate a response.';
-
-    console.log("Gemini Response:", reply);
 
     return NextResponse.json({ reply });
 
   } catch (error) {
     console.error('API route error:', error);
-
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

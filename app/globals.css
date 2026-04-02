@@ -5,6 +5,9 @@
 * {
   scroll-behavior: smooth;
 }
+textarea::-webkit-scrollbar {
+  display: none;
+}
 
 body {
   margin: 0;
