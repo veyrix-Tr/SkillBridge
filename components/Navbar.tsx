@@ -25,6 +25,8 @@ export default function Navbar() {
     // Set active section based on current path or scroll position
     if (pathname === '/about') {
       setActiveSection('about');
+    } else if (pathname === '/chat') {
+      setActiveSection('chat');
     } else if (pathname.startsWith('/careers')) {
       // Handle careers page with or without query parameters
       setActiveSection('careers');
@@ -130,6 +132,12 @@ export default function Navbar() {
             >
               About
             </a>
+            <a 
+              href="/chat" 
+              className={`nav-link ${activeSection === 'chat' ? 'active' : ''}`}
+            >
+              AI Chat
+            </a>
           </div>
 
           {/* Right Side Actions */}
@@ -190,6 +198,12 @@ export default function Navbar() {
               className={`nav-link block ${activeSection === 'about' ? 'active' : ''}`}
             >
               About
+            </a>
+            <a 
+              href="/chat" 
+              className={`nav-link block ${activeSection === 'chat' ? 'active' : ''}`}
+            >
+              AI Chat
             </a>
             
             <div className="pt-3 border-t border-gray-800">
